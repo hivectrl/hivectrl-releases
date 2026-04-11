@@ -1,29 +1,36 @@
 # HiveCtrl Releases
 
-本仓库用于 **公开发布 HiveCtrl 桌面端安装包**。源代码为私有仓库，此处仅提供构建产物与版本说明。
+HiveCtrl 桌面客户端的安装包在 **GitHub Releases** 中发布，请在下述页面选择对应平台与架构的文件下载。
 
 ## 下载
 
 - **最新版本**：[Releases · Latest](https://github.com/hivectrl/hivectrl-releases/releases/latest)
-- 所有历史版本见 [Releases 列表](https://github.com/hivectrl/hivectrl-releases/releases)。
+- **历史版本**：[Releases 列表](https://github.com/hivectrl/hivectrl-releases/releases)
 
-安装包通过 **GitHub Release 附件** 分发，**不会**以超大文件形式提交到本仓库的 Git 历史中。
+## 如何选择安装包
 
-## 文件说明（发版时建议在 Release 中附带）
+| 系统 | 常见安装包类型 |
+|------|----------------|
+| macOS | `.dmg`（请按页面上的文件名或说明选择适合你 Mac 的版本，例如 Apple Silicon 与 Intel 可能分别提供） |
+| Linux | `.deb`、`.AppImage` 等（以 Release 页面实际提供的文件名为准） |
 
-| 平台 | 常见产物 |
-|------|----------|
-| macOS | `.dmg`（Apple Silicon / Intel 请在 Release 标题或说明中标注） |
-| Linux | `.deb` / `.AppImage` 等 |
+## 校验（可选）
 
-建议在每次 Release 的说明中写明：**版本号、最低系统版本、架构、已知问题**；可选附带 **`SHA256SUMS`** 或单文件校验值，便于用户校验。
+若 Release 说明中提供了 SHA256，可在下载后与本地文件比对。
 
-## 校验示例
+**macOS：**
 
 ```bash
-shasum -a 256 HiveCtrl_xxx.dmg
-# 与 Release 说明中的 SHA256 比对
+shasum -a 256 ./你下载的文件名.dmg
 ```
+
+**Linux：**
+
+```bash
+sha256sum ./你下载的文件名.deb
+```
+
+请将命令中的文件名换成你在 Releases 里实际下载的文件名。
 
 ## 许可证
 
